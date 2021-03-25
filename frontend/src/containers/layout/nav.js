@@ -1,16 +1,10 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
-import {AppBar, Toolbar, Typography, IconButton} from '@material-ui/core'
+import {AppBar, Toolbar, Typography, IconButton, Button} from '@material-ui/core'
 import {Menu} from '@material-ui/icons'
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-}));
+import {useStyles} from '../style/material_ui_style'
 
 function Nav() {
   const classes = useStyles();
@@ -23,7 +17,21 @@ function Nav() {
             <Menu />
           </IconButton>
           <Typography variant="h6" color="inherit">
-            Home
+            <Link to="/">
+              <Button className={classes.button} style={{color: 'white'}}>Text</Button>
+            </Link>
+            <Link to="/list">
+              <Button className={classes.button} style={{color: 'white'}}>List</Button>
+            </Link>
+            <Link to="/json">
+              <Button className={classes.button} style={{color: 'white'}}>Json</Button>
+            </Link>
+            <Link to="/base64">
+              <Button className={classes.button} style={{color: 'white'}}>Base64</Button>
+            </Link>
+            <Link to="/regard">
+              <Button className={classes.button} style={{color: 'white'}}>Regard</Button>
+            </Link>
           </Typography>
         </Toolbar>
       </AppBar>
