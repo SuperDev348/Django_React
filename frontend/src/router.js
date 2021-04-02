@@ -4,11 +4,18 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import Home from './containers/home'
-import List from './containers/list'
-import Json from './containers/json'
-import Base64 from './containers/base64'
-import Regard from './containers/regard'
+import Home from './containers/programing/home'
+import List from './containers/programing/list'
+import Json from './containers/programing/json'
+import Base64 from './containers/programing/base64'
+import Regard from './containers/programing/regard'
+import Cron from './containers/programing/cron'
+import Binary from './containers/programing/binary'
+import TextComparison from './containers/programing/text_comparison'
+import ClassGenerator from './containers/programing/class_generator'
+import SimpleSavingsCalculator from './containers/financial/simple_savings_calculator'
+import SavingsCalculator from './containers/financial/savings_calculator'
+import Calculator from './containers/financial/calculator'
 
 export default function Routes() {
     return (
@@ -22,6 +29,20 @@ export default function Routes() {
         <Route path="/base64" component={Base64}>
         </Route>
         <Route path="/regard" component={Regard}>
+        </Route>
+        <Route path="/cron" component={Cron}>
+        </Route>
+        <Route path="/binary" component={Binary}>
+        </Route>
+        <Route path="/textComparison" component={TextComparison}>
+        </Route>
+        <Route path="/classGenerator" component={ClassGenerator}>
+        </Route>
+        <Route path="/simpleSavingCalculator" component={SimpleSavingsCalculator}>
+        </Route>
+        <Route path="/savingCalculator" component={SavingsCalculator}>
+        </Route>
+        <Route path="/calculator" component={Calculator}>
         </Route>
       </Router>
     );

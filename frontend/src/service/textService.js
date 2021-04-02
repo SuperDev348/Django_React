@@ -58,14 +58,18 @@ export const downloadText = (filename, text) => {
 }
 
 export const stringToRegex = (str) => {
-  // Main regex
-  const main = str.match(/\/(.+)\/.*/)[1]
-  
-  // Regex options
-  const options = str.match(/\/.+\/(.*)/)[1]
-  
-  // Compiled regex
-  return new RegExp(main, options)
+  try {
+    // Main regex
+    const main = str.match(/\/(.+)\/.*/)[1]
+    
+    // Regex options
+    const options = str.match(/\/.+\/(.*)/)[1]
+    
+    // Compiled regex
+    return new RegExp(main, options)
+  } catch(e) {
+    return null
+  }
 }
 
 export const isJsonString = (str) => {
@@ -75,4 +79,61 @@ export const isJsonString = (str) => {
       return false;
   }
   return true;
+}
+
+export const isNumeric = (str) => {
+  return !isNaN(str)
+}
+
+const cronValid = (str, from, to) => {
+  let res = true
+  if (str == '*')
+    return res;
+  if (str == '' || str == null || str == undefined)
+    return false
+  str.split(',').forEach((item) => {
+    if (!isNumeric(item))
+      res = false
+    else {
+      const num = parseInt(item)
+      if (num < from || num > to)
+        res = false
+    }
+  })
+  return res
+}
+
+export const getCron = (str) => {
+  const [minute, hour, dayMonth, month, dayWeek, other] = str.split(' ')
+  // validate
+  const validMinute = cronValid(minute, 0, 59)
+  const validHour = cronValid(hour, 0, 23)
+  const validDayMonth = cronValid(dayMonth, 1, 30)
+  const validMonth = cronValid(month, 1, 12)
+  const validDayWeek = cronValid(dayWeek, 1, 7)
+  let error = {
+    minute: !validMinute,
+    hour: !validHour,
+    dayMonth: !validDayMonth,
+    month: !validMonth,
+    dayWeek: !validDayWeek
+  }
+  const weekString = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  const monthString = ['January', 'February', 'March', 'April', 'May', 'June', 'Jule', 'August', 'September', 'October', 'November', 'December']
+  let string = ''
+  if (validMinute && validHour && validDayMonth && validMonth && validDayWeek) {
+    if (minute == '*')
+      string += 'At every minute'
+    else
+      string += 'At minute ' + minute
+    if (hour != '*')
+      string += ' past hour ' + hour
+    if (dayMonth != '*')
+      string += ' on day-of-month ' + dayMonth
+    if (dayWeek != '*')
+      string += ' and on ' + weekString[dayWeek - 1]
+    if (month != '*')
+      string += ' in ' + monthString[month - 1] + '.'
+  }
+  return {string, error}
 }
