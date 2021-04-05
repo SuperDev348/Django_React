@@ -56,30 +56,30 @@ function Calculator() {
           setSalary(value)
           break
         case 'salaryIncrease':
-          if (value > 0 && value < 100)
+          if (value>=0 && value<100)
             setSalaryIncrease(value)
           break
         case 'age':
-          if (value>0 && value<100)
+          if (value>=0 && value<100)
             setAge(value)
           break
         case 'retirementAge':
-          if (value>0 && value<100)
+          if (value>=0 && value<100)
             setRetirementAge(value)
           break
         case 'balance':
           setBalance(value)
           break
         case 'rate':
-          if (value > 0 && value < 100)
+          if (value>=0 && value<100)
             setRate(value)
           break
         case 'match':
-          if (value > 0 && value < 100)
+          if (value>=0 && value<100)
             setMatch(value)
           break
         case 'matchEnd':
-          if (value > 0 && value < 100)
+          if (value>=0 && value<100)    
             setMatchEnd(value)
           break
       }

@@ -144,6 +144,9 @@ function Nav() {
                         <Link to="/savingCalculator">
                           <MenuItem onClick={handleCloseF} style={{color: 'black'}}>Savings Calculator</MenuItem>
                         </Link>
+                        <Link to="/loanCalculator">
+                          <MenuItem onClick={handleCloseF} style={{color: 'black'}}>Loan/credit Calculator</MenuItem>
+                        </Link>
                       </MenuList>
                     </ClickAwayListener>
                   </Paper>

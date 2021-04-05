@@ -16,6 +16,7 @@ import ClassGenerator from './containers/programing/class_generator'
 import SimpleSavingsCalculator from './containers/financial/simple_savings_calculator'
 import SavingsCalculator from './containers/financial/savings_calculator'
 import Calculator from './containers/financial/calculator'
+import LoanCalculator from './containers/financial/loan_calculator'
 
 export default function Routes() {
     return (
@@ -43,6 +44,8 @@ export default function Routes() {
         <Route path="/savingCalculator" component={SavingsCalculator}>
         </Route>
         <Route path="/calculator" component={Calculator}>
+        </Route>
+        <Route path="/loanCalculator" component={LoanCalculator}>
         </Route>
       </Router>
     );

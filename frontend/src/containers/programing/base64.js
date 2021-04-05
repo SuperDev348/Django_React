@@ -17,7 +17,7 @@ function Base64() {
     let tmp = Buffer.from(resultString, 'base64').toString('ascii')
     setString(tmp)
   }
-
+      
   return (
     <div>
       <Nav />
