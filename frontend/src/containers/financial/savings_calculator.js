@@ -86,7 +86,7 @@ function SavingsCalculator() {
       }
     }
   }
-     
+
   useEffect(() => {
     const n = 12
     const earned = startingBalance * (Math.pow((1 + apy/(100 * n)), n * period * compounding) - 1)

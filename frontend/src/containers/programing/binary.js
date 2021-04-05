@@ -66,6 +66,6 @@ function Binary() {
         <Button className={classes.button} variant="outlined" style={{marginRight: 10}} onClick={handleDecode}>Decode</Button>
       </Container>
     </div>
-  )     
+  )
 }
 export default Binary

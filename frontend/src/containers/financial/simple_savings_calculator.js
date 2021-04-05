@@ -50,7 +50,7 @@ function SimpleSavingsCalculator() {
           break
       }
     }
-  }     
+  }
 
   useEffect(() => {
     const n = 12

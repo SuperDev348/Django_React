@@ -79,7 +79,7 @@ function Calculator() {
             setMatch(value)
           break
         case 'matchEnd':
-          if (value>=0 && value<100)    
+          if (value>=0 && value<100)
             setMatchEnd(value)
           break
       }

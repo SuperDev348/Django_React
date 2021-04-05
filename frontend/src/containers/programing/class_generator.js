@@ -31,7 +31,7 @@ function ClassGenerator() {
             label="Class name"
             value={className}
             onChange={(e) => setClassName(e.target.value)}
-            variant="outlined"     
+            variant="outlined"
             autoComplete="off"
           />
         </Grid>

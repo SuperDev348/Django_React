@@ -40,7 +40,7 @@ function LoanCalculator() {
   const [interestPaid, setInterestPaid] = useState(0)
   const [monthlyPayment, setMonthlyPayment] = useState(0)
 
-  const changeValue = (name, value) => {    
+  const changeValue = (name, value) => {
     if (isNumeric(value)) {
       switch (name) {
         case 'amount':
