@@ -7,7 +7,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
+  ResponsiveContainer
 } from "recharts";
 import {makeStyles} from "@material-ui/core/styles"
 
@@ -113,7 +114,7 @@ function Calculator() {
       <Nav />
       <Container maxWidth="lg">
         <Grid container spacing={2} style={{marginTop: 100, marginBottom: 10}}>
-          <Grid item xs={4}>
+          <Grid item lg={4} md={6} xs={12}>
             <div style={{paddingBottom: 30}}>
               <InputLabel id="" style={{color: '#3f51b5'}}>Employee Savings Plan</InputLabel>
               <TextField
@@ -212,7 +213,7 @@ function Calculator() {
               />
             </div>
           </Grid>
-          <Grid item xs={8} style={{paddingTop: 50}}>
+          <Grid item lg={8} md={6} xs={12} style={{paddingTop: 50}}>
             
             <div style={{fontSize: 20}}><b>Calculate result</b></div>
             <Grid
@@ -260,20 +261,20 @@ function Calculator() {
               alignItems="center"
               style={{padding: '30px 0px'}}
             >
-              <BarChart
-                width={700}
-                height={300}
-                data={list}
-                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="employer" fill="#8884d8" />
-                <Bar dataKey="withoutEmployer" fill="#b8cbe4" />
-              </BarChart>
+              <ResponsiveContainer width="99%" aspect={3}>
+                <BarChart
+                  data={list}
+                  margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" />
+                  <XAxis dataKey="name" />
+                  <YAxis />
+                  <Tooltip />
+                  <Legend />
+                  <Bar dataKey="employer" fill="#8884d8" />
+                  <Bar dataKey="withoutEmployer" fill="#b8cbe4" />
+                </BarChart>
+              </ResponsiveContainer>
             </Grid>
             
           </Grid>

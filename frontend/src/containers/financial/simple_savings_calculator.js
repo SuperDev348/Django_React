@@ -7,7 +7,8 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend
+  Legend,
+  ResponsiveContainer
 } from "recharts";
 import {makeStyles} from "@material-ui/core/styles"
 
@@ -75,7 +76,7 @@ function SimpleSavingsCalculator() {
       <Nav />
       <Container maxWidth="lg">
         <Grid container spacing={2} style={{marginTop: 100, marginBottom: 10}}>
-          <Grid item xs={4}>
+          <Grid item lg={4} md={6} xs={12}>
             <TextField
               id="outlined-multiline-static"
               className={classes.text}
@@ -125,22 +126,24 @@ function SimpleSavingsCalculator() {
               key={4}
             />
           </Grid>
-          <Grid item xs={4} style={{paddingTop: 50}}>
-            <BarChart
-              width={400}
-              height={300}
-              data={list}
-              margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              <Bar dataKey="pv" fill="#8884d8" />
-            </BarChart>
+          <Grid item lg={4} md={6} xs={12} style={{paddingTop: 50}}>
+            <ResponsiveContainer width="99%" aspect={3}>
+              <BarChart
+                width={400}
+                height={300}
+                data={list}
+                margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="pv" fill="#8884d8" />
+              </BarChart>
+            </ResponsiveContainer>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item lg={4} md={6} xs={12}>
             <div style={{fontSize: 20}}><b>Total savings breakdown</b></div>
             <Grid
               container

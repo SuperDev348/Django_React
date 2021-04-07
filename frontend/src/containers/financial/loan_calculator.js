@@ -86,7 +86,7 @@ function LoanCalculator() {
           justify="center"
           alignItems="center"
         >
-          <Grid item xs={4}>
+          <Grid item lg={4} md={6} xs={12}>
             <TextField
               id="outlined-multiline-static"
               className={classes.text}
@@ -128,7 +128,7 @@ function LoanCalculator() {
               key={4}
             />
           </Grid>
-          <Grid item xs={4}>
+          <Grid item lg={4} md={6} xs={12}>
             <Grid
               container
               direction="row"

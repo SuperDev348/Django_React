@@ -41,6 +41,10 @@ function ClassGenerator() {
               <div className={classes.codeLine}>class {className}():</div>
               <div className={classes.codeLine}>&emsp;def __init__(self):</div>
               <div className={classes.codeLine}>&emsp;&emsp;super().__init__()</div>
+              <div className={classes.codeLine}>&emsp;def run(self):</div>
+              <div className={classes.codeLine}>&emsp;&emsp;pass</div>
+              <div className={classes.codeLine}>if __name__ == '__main__':</div>
+              <div className={classes.codeLine}>&emsp;{className}.run()</div>
             </div>
           )
         }

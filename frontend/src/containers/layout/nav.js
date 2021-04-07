@@ -60,9 +60,6 @@ function Nav() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar variant="dense">
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <Menu />
-          </IconButton>
           <Typography variant="h6" color="inherit">
             <Button
               ref={anchorRefP}
@@ -74,7 +71,7 @@ function Nav() {
             >
               Programing
             </Button>
-            <Popper open={openP} anchorEl={anchorRefP.current} role={undefined} transition disablePortal>
+            <Popper open={openP} anchorEl={anchorRefP.current} role={undefined} transition disablePortal style={{zIndex: 999}}>
               {({ TransitionProps, placement }) => (
                 <Grow
                   {...TransitionProps}
@@ -126,7 +123,7 @@ function Nav() {
             >
               Financial
             </Button>
-            <Popper open={openF} anchorEl={anchorRefF.current} role={undefined} transition disablePortal>
+            <Popper open={openF} anchorEl={anchorRefF.current} role={undefined} transition disablePortal style={{zIndex: 999}}>
               {({ TransitionProps, placement }) => (
                 <Grow
                   {...TransitionProps}
