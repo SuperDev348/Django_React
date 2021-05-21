@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import {TextField, Container, Button} from '@material-ui/core'
-
+    
 import Nav from '../layout/nav'
 import {useStyles} from '../style/material_ui_style'
 import {toTitlecase, toAlternate, toInversecase, copyText, downloadText} from '../../service/textService'
