@@ -9,7 +9,7 @@ export default function Input(props) {
     error? style.border = "red solid 1px" : style.border = "black solid 1px";
     setStyle(style);
   }, [error])
-    
+
   return (
     <>
       <input type={type} 
