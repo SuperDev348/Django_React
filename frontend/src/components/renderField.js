@@ -8,5 +8,5 @@ const renderField = ({ input, placeholder, type, meta: { touched, error, warning
       (warning ? <div style={{color: "yellow", fontSize: 12}}>{warning}</div> : <div style={{marginBottom: 18}}></div>)) : <div style={{marginBottom: 18}}></div>}
   </div>
 );
-
+   
 export default renderField
