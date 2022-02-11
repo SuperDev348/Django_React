@@ -35,6 +35,10 @@ function LoanCalculator() {
   const [periodY, setPeriodY] = useState(1)
   const [periodM, setPeriodM] = useState(12)
   const [apy, setApy] = useState(10)
+  const [list, setList] = useState([])
+  const [principalPaid, setPrincipalPaid] = useState(0)
+  const [interestPaid, setInterestPaid] = useState(0)
+  const [monthlyPayment, setMonthlyPayment] = useState(0)
 
   const changeValue = (name, value) => {
     if (isNumeric(value)) {
