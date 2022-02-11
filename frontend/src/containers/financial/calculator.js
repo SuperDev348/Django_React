@@ -12,9 +12,6 @@ import {
 } from "recharts";
 import {makeStyles} from "@material-ui/core/styles"
 
-import Nav from '../layout/nav'
-import {isNumeric} from '../../service/textService'
-    
 const useStyles = makeStyles((theme) => ({
   text: {
     width: '100%',
