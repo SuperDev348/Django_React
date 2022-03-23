@@ -3,6 +3,7 @@ import {TextField, Container, Button, Grid} from '@material-ui/core'
 
 import Nav from './layout/nav'
 import {useStyles} from './style/material_ui_style'
+import {toTitlecase, toAlternate, toInversecase, copyText, downloadText} from '../service/textService'
 
 function Base64() {
   const classes = useStyles();
