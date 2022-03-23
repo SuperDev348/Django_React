@@ -6,7 +6,6 @@ import {useStyles} from './style/material_ui_style'
 import {isJsonString} from '../service/textService'
 
 function Json() {
-  const classes = useStyles();
   const [string, setString] = useState('')
   const [listString, setListString] = useState('')
   const [isValidate, setIsValidate] = useState(true)
