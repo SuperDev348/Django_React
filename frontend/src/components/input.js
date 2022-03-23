@@ -2,7 +2,7 @@ import React from "react";
    
 export default function Input(props) {
   const {type, name, placeholder, value, onChange, error} = props;
-  const [style, setStyle] = React.useState({});
+  // const [style, setStyle] = React.useState({});
 
   React.useEffect(() => {
     let style = {};

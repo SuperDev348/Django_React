@@ -1,10 +1,6 @@
 const isUpperCase = char => char.charCodeAt(0) >= 65 && char.charCodeAt(0)<= 90
 const isLowerCase = char => char.charCodeAt(0) >= 97 && char.charCodeAt(0) <= 122
-export const toTitlecase = (string) => {
-  return string.toLowerCase().split(' ').map((word) => {
-    return (word.charAt(0).toUpperCase() + word.slice(1))
-  }).join(' ')
-}
+
 
 export const toAlternate = (string) => {
   let res = '';
